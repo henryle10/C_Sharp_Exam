@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C_Sharp_Exam.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20200425041312_MigOne")]
+    [Migration("20200425050544_MigOne")]
     partial class MigOne
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
