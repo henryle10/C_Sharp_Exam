@@ -73,7 +73,7 @@ namespace C_Sharp_Exam.Controllers
             var PresentYear = DateTime.Now;
             if (newEvent.Date < PresentYear)
             {
-                ModelState.AddModelError("Date", "Date cannot be in the past");
+                ModelState.AddModelError("Date", "Date cannot be today or in the past");
                 return View("NewActivityPage");
             }
             if (ModelState.IsValid)
