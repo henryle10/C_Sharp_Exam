@@ -1,0 +1,50 @@
+@model Event;
+
+<div class="row">
+    <div class="col-md-9">
+        <h2>Dojo Activity Center</h2>
+    </div>
+    <div class="col-md-3" style="margin: auto">
+        <a asp-controller="Home" asp-action="Dashboard">Home</a>
+        <a style="display: inline-block; margin-left: 70px" asp-action="Logout" asp-controller="Home">Logout</a>
+    </div>
+</div>
+<hr style="border: 1px solid black">
+<div class="row">
+    <div class="col-md-10">
+        <h2>@Model.Name</h2>
+        <br>
+    </div>
+    <div class="col-md-2">
+        @if (@Model.Creator.UserId == @ViewBag.uid)
+            {
+                <a asp-action="Delete" asp-controller="Home" asp-route-id="@Model.EventId">Delete</a>
+            }
+            else
+            {
+                @if(@Model.EventList.Any(user => user.UserId == @ViewBag.uid))
+                {
+                    <a href="/Leave/@Model.EventId">Leave</a>
+                }
+                else
+                {
+                    <a href="/Join/@Model.EventId">Join</a>
+                }
+            }
+    </div>
+</div>
+<div>
+    <h5>Event Coordinator: @ViewBag.User.Name</h5>
+    <br>
+    <h6>Description</h6>
+    <p>@Model.Description</p>
+    <br>
+    <h6>Participants</h6>
+    <br>
+    @foreach (var p in @Model.EventList)
+    {
+    <ul>
+        <li>@p.Attendee.Name</li>
+    </ul>
+    }
+</div>

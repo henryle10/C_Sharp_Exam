@@ -1,0 +1,106 @@
+@model Event;
+
+<div class="row">
+    <div class="col-md-9">
+        <h2>Dojo Activity Center</h2>
+    </div>
+    <div class="col-md-3 text-right" style="margin: auto;">
+        <a asp-controller="Home" asp-action="Dashboard">Home</a>
+        <a style="display: inline-block; margin-left: 80px" asp-action="Logout" asp-controller="Home">Logout</a>
+    </div>
+</div>
+<hr style="border: 1px solid black;">
+<br>
+<h3>Create an Activity</h3>
+<br>
+<form asp-action="CreateActivity" asp-controller="Home" >
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row form-group">
+                <div class="col-sm-3">
+                    <label asp-for="Name">Title:</label>
+                    <span
+                    class="text-danger font-weight-bold"
+                    asp-validation-for="Name"
+                    ></span>
+                </div>
+                <div class="col-sm-9">
+                    <input asp-for="Name" class="form-control"/>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-6">
+            <div class="row form-group">
+                <div class="col-sm-3">
+                    <label asp-for="Time">Time:</label>
+                    <span
+                    class="text-danger font-weight-bold"
+                    asp-validation-for="Time"
+                    ></span>
+                </div>
+                <div class="col-sm-9">
+                    <input type="time" asp-for="Time" class="form-control"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row form-group">
+                <div class="col-sm-3">
+                    <label asp-for="Date">Date:</label>
+                    <span
+                    class="text-danger font-weight-bold"
+                    asp-validation-for="Date"
+                    ></span>
+                </div>
+                <div class="col-sm-9">
+                    <input type="date" asp-for="Date" class="form-control"/>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-6">
+            <div class="row form-group">
+                <div class="col-sm-3">
+                    <label asp-for="Duration">Duration:</label>
+                    <span
+                    class="text-danger font-weight-bold"
+                    asp-validation-for="Duration"
+                    ></span>
+                </div>
+                <div class="col-sm-5">
+                    <input type="number" asp-for="Duration" class="form-control"/>
+                </div>
+                <div class="col-sm-4">
+                    <select asp-for="HourOrMin" class="form-control">
+                        <option value="Hours">Hours</option>
+                        <option value="Minutes">Minutes</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row form-group">
+            <div class="col-sm-3">
+                <label asp-for="Description">Description:</label>
+                <span
+                class="text-danger font-weight-bold"
+                asp-validation-for="Description"
+                ></span>
+            </div>
+            <div class="col-sm-9">
+                <textarea asp-for="Description" cols="135" rows="15"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-right">
+    <button class="btn btn-success">Create Activity</button>
+</div>
+
+</form>

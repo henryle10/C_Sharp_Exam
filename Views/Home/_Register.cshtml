@@ -1,0 +1,66 @@
+@model User;
+
+<form asp-controller="Home" asp-action="Register" method="POST">
+    <fieldset class="border p-3">
+    <legend class="w-auto">
+        Login
+    </legend>
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <label asp-for="Name"></label>
+                <span
+                class="text-danger font-weight-bold"
+                asp-validation-for="Name"
+                ></span>
+            </div>
+            <div class="col-sm-6">
+                <input asp-for="Name" class="form-control"/>
+            </div>
+        </div>
+        
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <label asp-for="Email"></label>
+                <span
+                class="text-danger font-weight-bold"
+                asp-validation-for="Email"
+                ></span>
+            </div>
+            <div class="col-sm-6">
+                <input asp-for="Email" class="form-control"/>
+            </div>
+        </div>
+
+        
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <label asp-for="Password"></label>
+            </div>
+            <div class="col-sm-6">
+                <input asp-for="Password" class="form-control"/>
+                <span
+                class="text-danger font-weight-bold"
+                asp-validation-for="Password"
+                ></span>
+            </div>
+        </div>
+
+        
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <label asp-for="PasswordConfirm"></label>
+            </div>
+            <div class="col-sm-6">
+                <input asp-for="PasswordConfirm" class="form-control"/>
+                <span
+                class="text-danger font-weight-bold"
+                asp-validation-for="PasswordConfirm"
+                ></span>
+            </div>
+        </div>
+        <br>
+        <div class="text-right">
+            <button class="btn btn-success text-right">Register</button>
+        </div>
+    </fieldset>
+</form>

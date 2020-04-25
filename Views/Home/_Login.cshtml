@@ -1,0 +1,38 @@
+@model LoginUser;
+
+<form asp-action="LoginUser" asp-controller="Home">
+    <fieldset class="border p-3">
+    <legend class="w-auto">
+        Register
+    </legend>
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <label asp-for="LoginEmail"></label>
+            </div>
+            <div class="col-sm-6">
+                <input asp-for="LoginEmail" class="form-control"/>
+                <span
+                class="text-danger font-weight-bold"
+                asp-validation-for="LoginEmail"
+                ></span>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-sm-6">
+                <label asp-for="LoginPassword"></label>
+            </div>
+            <div class="col-sm-6">
+                <input value="asdfasdf" asp-for="LoginPassword" class="form-control"/>
+                <span
+                class="text-danger font-weight-bold"
+                asp-validation-for="LoginPassword"
+                ></span>
+            </div>
+        </div>
+        <br>
+        <div class="text-right">
+            <button class="btn btn-success">Sign in</button>    
+        </div>
+    </fieldset>
+</form>
